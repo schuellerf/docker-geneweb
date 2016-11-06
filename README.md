@@ -14,7 +14,7 @@ Just run the container:
 docker run --env LANGUAGE=de -d --name docker-geneweb -p2316:2316 -p2317:2317 -v ${HOME}/GenealogyData:/genewebData docker-geneweb:latest
 ```
 
-and go to [http://localhost:2317]
+and go to [http://localhost:2317](http://localhost:2317)
 
 if you happen to have the git repository you can also execute:
 ```
@@ -24,7 +24,7 @@ if you happen to have the git repository you can also execute:
 **note:** the directory `${HOME}/GenealogyData` has to be a *full path*
 
 ## Setup
-The setup will be started automatically [http://localhost:2316] if no database can be found
+The setup will be started automatically [http://localhost:2316](http://localhost:2316) if no database can be found
 		
 **Please be patient** the setup tool will be installed "on the fly" only upon the *first start* if you don't have any genealogy database.
 
@@ -33,7 +33,7 @@ If you start the container and you already have a database but you want more dat
 ```
 docker exec docker-geneweb /start_setup.sh
 ```
-and then navigate to [http://localhost:2316]
+and then navigate to [http://localhost:2316](http://localhost:2316)
 ## Shutdown
 
 To shutdown the container just run
@@ -48,7 +48,7 @@ If you need to do a backup just either backup your data folder (e.g. `${HOME}/Ge
 To export the data as "*.ged" file or similar you need to start the "setup" tool
 
 ```
-docker exec docker-geneweb /start_setup.sh
+docker exec -ti docker-geneweb /start_setup.sh
 ```
-and then navigate to [http://localhost:2316]
+and then navigate to [http://localhost:2316](http://localhost:2316)
 

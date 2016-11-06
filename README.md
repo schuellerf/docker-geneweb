@@ -26,8 +26,6 @@ if you happen to have the git repository you can also execute:
 ## Setup
 The setup will be started automatically [http://localhost:2316](http://localhost:2316) if no database can be found
 		
-**Please be patient** the setup tool will be installed "on the fly" only upon the *first start* if you don't have any genealogy database.
-
 If you start the container and you already have a database but you want more databases or do some backup you need to start the setup manually like so:
 
 ```

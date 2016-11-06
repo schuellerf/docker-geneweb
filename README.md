@@ -11,7 +11,7 @@ Usually you want to keep your database so to keep your data in an *existing* dir
 
 Just run the container:
 ```
-docker run --env LANGUAGE=de -d --name docker-geneweb -p2316:2316 -p2317:2317 -v ${HOME}/GenealogyData:/genewebData docker-geneweb:latest
+docker run --env LANGUAGE=de -d --name geneweb -p2316:2316 -p2317:2317 -v ${HOME}/GenealogyData:/genewebData schuellerf/geneweb:latest
 ```
 
 and go to [http://localhost:2317](http://localhost:2317)
@@ -31,15 +31,15 @@ The setup will be started automatically [http://localhost:2316](http://localhost
 If you start the container and you already have a database but you want more databases or do some backup you need to start the setup manually like so:
 
 ```
-docker exec docker-geneweb /start_setup.sh
+docker exec geneweb /start_setup.sh
 ```
 and then navigate to [http://localhost:2316](http://localhost:2316)
 ## Shutdown
 
 To shutdown the container just run
 ```
-docker stop docker-geneweb
-docker rm docker-geneweb
+docker stop geneweb
+docker rm geneweb
 ```
 
 ## Backup
@@ -48,7 +48,7 @@ If you need to do a backup just either backup your data folder (e.g. `${HOME}/Ge
 To export the data as "*.ged" file or similar you need to start the "setup" tool
 
 ```
-docker exec -ti docker-geneweb /start_setup.sh
+docker exec -ti geneweb /start_setup.sh
 ```
 and then navigate to [http://localhost:2316](http://localhost:2316)
 

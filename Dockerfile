@@ -20,7 +20,7 @@ ENV PORT         2317
 ENV SETUP_PORT   2316
 
 # Language of interface and setup
-ENV LANGUAGE     ${LANGUAGE}
+ENV LANGUAGE     de
 
 EXPOSE ${PORT}
 EXPOSE ${SETUP_PORT}

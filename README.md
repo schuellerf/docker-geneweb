@@ -25,7 +25,7 @@ if you happen to have the git repository you can also execute:
 
 ## Setup
 The setup will be started automatically [http://localhost:2316] if no database can be found
-
+		
 **Please be patient** the setup tool will be installed "on the fly" only upon the *first start* if you don't have any genealogy database.
 
 If you start the container and you already have a database but you want more databases or do some backup you need to start the setup manually like so:
@@ -45,5 +45,10 @@ docker rm docker-geneweb
 ## Backup
 If you need to do a backup just either backup your data folder (e.g. `${HOME}/GenealogyData`)
 
-To export the data as "*.ged" file or similar you need to start the "setup" tool (see above)
+To export the data as "*.ged" file or similar you need to start the "setup" tool
+
+```
+docker exec docker-geneweb /start_setup.sh
+```
+and then navigate to [http://localhost:2316]
 

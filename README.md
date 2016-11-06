@@ -1,10 +1,6 @@
 # docker-geneweb
 Dockerized installation of Geneweb
 
-The container does not include `gwsetup` by default but this is only installed once to create a database
-
-*hint:* `gwsetup` is the program to create a genealogy database initially
-
 ## Usage
 
 Usually you want to keep your database so to keep your data in an *existing* directory e.g. `${HOME}/GenealogyData`

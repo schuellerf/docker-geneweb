@@ -1,5 +1,5 @@
 # docker-geneweb
-Dockerized installation of Geneweb
+Dockerized installation of [Geneweb](https://en.wikipedia.org/wiki/GeneWeb)  
 
 ## Usage
 

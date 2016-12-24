@@ -34,6 +34,7 @@ RUN \
 RUN ln -s /usr/bin/gwc2 /usr/share/geneweb/gwc2
 RUN ln -s /usr/bin/gwb2ged /usr/share/geneweb/gwb2ged
 RUN ln -s /usr/bin/gwu /usr/share/geneweb/gwu
+RUN ln -s /usr/bin/ged2gwb /usr/share/geneweb/ged2gwb
 
 COPY scripts/bootstrap.sh /
 RUN chmod a+x /bootstrap.sh

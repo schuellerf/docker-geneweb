@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-docker build --tag schuellerf/geneweb:latest --tag schuellerf/geneweb:1.0 .
+docker build --tag wollud1969/geneweb5:latest --tag wollud1969/geneweb5:1.0 .
 
 

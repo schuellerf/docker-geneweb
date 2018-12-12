@@ -23,8 +23,11 @@ RUN \
   apt-get -y install  wget && \
   rm -rf /var/lib/apt/lists/* 
 
+COPY gw-5.02-linux.tar.chksum /tmp
+
 RUN \
   cd /tmp && wget --no-check-certificate https://github.com/geneweb/geneweb/releases/download/v5.02/gw-5.02-linux.tar && \
+  md5sum --check gw-5.02-linux.tar.chksum && \ 
   tar -xf gw-5.02-linux.tar && \
   cd /opt && mkdir geneweb && \
   mv /tmp/distribution/* /opt/geneweb && \

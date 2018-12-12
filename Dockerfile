@@ -2,6 +2,10 @@ FROM i386/debian:wheezy
 
 MAINTAINER Wolfgang Hottgenroth <wolfgang.hottgenroth@icloud.com>
 
+ARG GENEWEB_UID="2317"
+ARG GENEWEB_GID="2317"
+
+
 # This is where your data is
 ENV GENEWEBDB     /genewebData
 ENV GENEWEBSHARE  /opt/geneweb/gw
@@ -23,7 +27,13 @@ RUN \
   cd /tmp && wget --no-check-certificate https://github.com/geneweb/geneweb/releases/download/v5.02/gw-5.02-linux.tar && \
   tar -xf gw-5.02-linux.tar && \
   cd /opt && mkdir geneweb && \
-  mv /tmp/distribution/* /opt/geneweb 
+  mv /tmp/distribution/* /opt/geneweb && \
+  groupadd -r -g $GENEWEB_GID geneweb && \
+  useradd -r -u $GENEWEB_UID -g geneweb geneweb && \
+  chown -R geneweb:geneweb /opt/geneweb && \
+  mkdir $GENEWEBDB && \
+  chown geneweb:geneweb $GENEWEBDB
+
 
 
 COPY scripts/bootstrap.sh /
@@ -34,5 +44,6 @@ COPY scripts/README-SETUP.txt /
 
 VOLUME ${GENEWEBDB}
 
+USER geneweb
 CMD ["/bootstrap.sh"]
 

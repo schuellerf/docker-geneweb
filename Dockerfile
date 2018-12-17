@@ -18,16 +18,18 @@ ENV LANGUAGE     de
 
 EXPOSE ${PORT}
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN \
   apt-get update && \
-  apt-get -y install  wget && \
+  apt-get -y install ca-certificates wget && \
   rm -rf /var/lib/apt/lists/* 
 
 RUN \
   echo "75f55ac1d0aca82faee57a617bbced26  gw-5.02-linux.tar" > /tmp/gw-chksum
 
 RUN \
-  cd /tmp && wget --no-check-certificate https://github.com/geneweb/geneweb/releases/download/v5.02/gw-5.02-linux.tar && \
+  cd /tmp && wget https://github.com/geneweb/geneweb/releases/download/v5.02/gw-5.02-linux.tar && \
   md5sum --check gw-chksum && \ 
   tar -xf gw-5.02-linux.tar && \
   cd /opt && mkdir geneweb && \

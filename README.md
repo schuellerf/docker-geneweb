@@ -1,7 +1,7 @@
 # docker-geneweb
 Dockerized installation of [Geneweb](https://en.wikipedia.org/wiki/GeneWeb)  
 
-(!) This container runs the OLD version 5 of Geneweb!
+:warning: This container runs the OLD version 5 of Geneweb!
 Refer to https://github.com/schuellerf/docker-geneweb for a more recent version
 
 ## Usage

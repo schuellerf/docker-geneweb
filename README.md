@@ -10,7 +10,7 @@ Usually you want to keep your database so to keep your data in an *existing* dir
 
 Just run the container:
 ```
-docker run --user=$(id -u) --env LANGUAGE=de -d --name geneweb -p2316:2316 -p2317:2317 -v ${HOME}/GenealogyData:/genewebData schuellerf/geneweb5:latest
+docker run --user=$(id -u) --env LANGUAGE=de -d --name geneweb -p2316:2316 -p2317:2317 -v ${HOME}/GenealogyData:/genewebData schuellerf/geneweb:geneweb5-latest
 ```
 
 and go to [http://localhost:2317](http://localhost:2317)
